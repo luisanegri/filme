@@ -5,7 +5,7 @@ $(document).ready(() => {
     getFilms(searchText);
     //stop form from submitting to a file
     e.preventDefault();
-  });
+  })
 });
 
 //Create getFilms function
@@ -13,6 +13,7 @@ function getFilms(searchText) {
   axios.get('https://api.themoviedb.org/3/search/movie?api_key=481bce5538131467b4d3508eda2d7e05&language=en&include_image_language=en,null&query=' +searchText)
     .then((response) => {
     console.log(response);
+    //data stored on the films variable
     let films = response.data.results;
     let output = '';
     $.each(films, (index, film) => {
@@ -54,3 +55,8 @@ function getFilm(){
   console.log(err);
 });
 }
+
+
+///$('#searchForm').on('submit', (e) => {
+//  let searchText = $('#searchText').val();
+//  getFilms(searchText);
