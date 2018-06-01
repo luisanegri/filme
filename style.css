@@ -1,0 +1,21 @@
+img {
+padding: 14px;
+max-height: 220px;
+min-height: 220px;
+}
+
+.page-section-dark {
+  background-color: #535f65;
+border-top: 1px solid #e7eef5;
+border-bottom: 1px solid #84b0c9;
+padding: 20px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.title-pop {
+  color: white;
+  
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,24 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
 </head>
+
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
+
+  <div class="container-fluid">
+    <div class="page-section-dark">
+      <h3 class="title-pop">Populars on Filme</h3>
+    </div>
+
+      <div class="page-section-dark">
+        <div id="popular-films" class="row">
+
+
+        </div>
+      </div>
+    </div>
+
+
+      <div class="col-md-12">
         <div class="jumbotron">
           <h3 class="text-center">Search Films</h3>
           <form id="searchForm">
@@ -19,25 +34,19 @@
           </form>
         </div>
       </div>
-      <div class="col-md-4">
-        <h3>Search by category</h3>
-        <ul>
-          <li><a href="#" id="catOne">Drama</a></li>
-          <li><a href="#" id="catTwo">Drama</a></li>
-          <li><a href="#" id="catThree">Drama</a></li>
-          <li><a href="#" id="catFour">Drama</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!--output-->
+
+
+  <!--output query-->
   <div id="films" class="row"></div>
 
-  <script
-   src="https://code.jquery.com/jquery-3.1.1.min.js"
-   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-   crossorigin="anonymous"></script>
-   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-   <script src="main.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    getPopFilms();
+  </script>
 </body>
+
 </html>
