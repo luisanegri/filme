@@ -5,7 +5,7 @@ min-height: 220px;
 }
 
 .page-section-dark {
-  background-color: #535f65;
+background-color: #535f65;
 border-top: 1px solid #e7eef5;
 border-bottom: 1px solid #84b0c9;
 padding: 20px 0;
@@ -16,6 +16,10 @@ padding: 20px 0;
 }
 
 .title-pop {
-  color: white;
-  
+  color: #fafafa;
+  margin-left: 10px
+}
+
+.navbar {
+  background-color: #000;
 }
