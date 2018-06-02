@@ -12,7 +12,7 @@ $(document).ready(() => {
 function getFilms(searchText) {
   axios.get('https://api.themoviedb.org/3/search/movie?api_key=481bce5538131467b4d3508eda2d7e05&language=en&include_image_language=en,null&query=' + searchText)
     .then((response) => {
-      console.log(response);
+
       //data stored on the films variable
       let films = response.data.results;
       let output = '';
@@ -44,7 +44,6 @@ function getFilmDetails() {
   let filmId = sessionStorage.getItem('filmId');
   axios.get('https://api.themoviedb.org/3/movie/' + filmId + '?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US')
     .then((response) => {
-      console.log(response);
       //store data
       let film = response.data;
 
@@ -72,13 +71,40 @@ function getFilmDetails() {
         </div>
       </div>
       `;
-
       $('#film').html(output);
     })
     .catch((err) => {
       console.log(err);
     });
 }
+
+function getRecommendations() {
+   let filmId = sessionStorage.getItem('filmId');
+   axios.get('https://api.themoviedb.org/3/movie/'+filmId+'/recommendations?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US&page=1')
+   .then((response) => {
+     console.log(response);
+     let recommend = response.data.results;
+     let output = '';
+     $.each(recommend, (index, film) => {
+       if (index > 5) {
+                  return false;
+           }
+       output += `
+   <div class="col-md-2">
+         <div class="well text-center">
+           <a onclick="filmSelected('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}"></a>
+           <a onclick="filmSelected('${film.id}')" href="#"><h5>${film.title}</h5></a>
+         </div>
+       </div>
+       `;
+     });
+     $('#recommend').html(output);
+     getFilmDetails();
+     })
+     .catch((err) => {
+       console.log(err);
+    });
+  }
 
 function getPopFilms(){
   axios.get('https://api.themoviedb.org/3/discover/movie?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
@@ -95,12 +121,8 @@ function getPopFilms(){
       <div class="well text-center">
         <a onclick="filmSelected('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}"></a>
         <a onclick="filmSelected('${film.id}')" href="#"><h5>${film.title}</h5></a>
-
-
       </div>
-
     </div>
-
     `;
   });
     $('#popular-films').html(popOutput);
@@ -110,12 +132,3 @@ function getPopFilms(){
   console.log(err);
 });
 }
-
-
-/*  function getRecommendations() {
-    let filmId = sessionStorage.getItem('filmId');
-    axios.get('https://api.themoviedb.org/3/movie/'+filmId+'/recommendations?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US&page=1')
-    .then((response) => {
-      console.log(response);
-    });
-  }*/
