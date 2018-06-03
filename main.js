@@ -50,9 +50,9 @@ function getFilmDetails() {
       let output = `
       <div class="row">
         <div class="col-md-4">
-          <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="thumbnail">
+          <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="thumbnail img-poster">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 desc">
           <h2>${film.title}</h2>
           <ul class="list-group">
             <li class="list-group-item"><strong>Genre:</strong> ${film.genres}</li>
@@ -63,11 +63,10 @@ function getFilmDetails() {
         </div>
       </div>
       <div class="row">
-        <div class="well">
+        <div class="well overview">
           <h3>Overview</h3>
           ${film.overview}
-          <hr>
-          <a href="index.html" class="btn btn-default">Go Back To Search</a>
+
         </div>
       </div>
       `;
@@ -90,12 +89,15 @@ function getRecommendations() {
                   return false;
            }
        output += `
+
    <div class="col-md-2">
          <div class="well text-center">
            <a onclick="filmSelected('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}"></a>
            <a onclick="filmSelected('${film.id}')" href="#"><h5>${film.title}</h5></a>
          </div>
        </div>
+       <hr>
+
        `;
      });
      $('#recommend').html(output);

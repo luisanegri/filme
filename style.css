@@ -13,17 +13,51 @@ padding: 10px 0;
 
 .text-center {
   text-align: center;
+  font-size: 22px;
 }
 
 .title-pop {
   color: #fafafa;
-  margin-left: 10px
+  margin-left: 10px;
+  font-size: 22px;
 }
 
 .navbar {
   background-color: #000;
 }
 
-.cont-film {
+.img-poster {
+  max-height: 400px;
+  min-height: 400px;
+}
+
+.desc {
   padding-top: 20px;
+}
+
+.overview {
+  padding-left: 26px;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.rec {
+  font-size: 30px;
+}
+
+#recommend {
+  padding-top: 70px;
+}
+
+.brand-name {
+  font-size: 30px;
+  font-family: Poiret One;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+h5 .film-title {
+  font-size: 20px;
 }
