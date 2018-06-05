@@ -45,19 +45,30 @@ padding: 10px 0;
 
 .rec {
   font-size: 30px;
+padding-left: 57px;
+margin-top: 40px;
 }
 
 #recommend {
-  padding-top: 70px;
+  padding-top: 20px;
 }
 
 .brand-name {
   font-size: 30px;
   font-family: Poiret One;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   font-weight: bold;
 }
 
 h5 .film-title {
   font-size: 20px;
+}
+
+/* Media Query */
+
+@media (min-width: 400px) and (max-width: 574px) {
+  .pop-img {
+    max-height: 150px;
+    min-height: 150px;
+  }
 }
