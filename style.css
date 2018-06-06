@@ -53,12 +53,12 @@ img {
   padding-top: 20px;
 }
 
-
 #searchForm {
-background-color: #535f65;
-color: #fafafa;
-margin-left: 5px;
+  background-color: #535f65;
+  color: #fafafa;
+  margin-left: 5px;
 }
+
 .brand-name {
   font-size: 30px;
   font-family: Poiret One;
@@ -66,8 +66,27 @@ margin-left: 5px;
   font-weight: bold;
 }
 
-h5 .film-title {
-  font-size: 20px;
+.film-title {
+  font-size: 15px;
+}
+
+.well-results {
+  background-color: #e9ecef;
+  box-shadow: 10px 5px;
+  max-width: 200px;
+  min-width: 200px;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-left: 50px;
+}
+
+.btn-primary {
+  height: 32px;
+  margin-bottom: 10px;
+}
+
+a .btn {
+  border-radius: 0;
 }
 
 /* Media Query */

@@ -16,9 +16,9 @@ function getFilms(searchText) {
       $.each(films, (index, film) => {
         output.push(`
         <div class="col-md-3">
-          <div class="well text-center">
+          <div class="well text-center well-results">
             <img src="https://image.tmdb.org/t/p/w185/${film.poster_path}">
-            <h5>${film.title}</h5>
+            <h5 class="film-title">${film.title}</h5>
             <a onclick="switchPage('${film.id}')" class="btn btn-primary" href="#">Film Details</a>
           </div>
         </div>
