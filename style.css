@@ -53,6 +53,12 @@ img {
   padding-top: 20px;
 }
 
+
+#searchForm {
+background-color: #535f65;
+color: #fafafa;
+margin-left: 5px;
+}
 .brand-name {
   font-size: 30px;
   font-family: Poiret One;
