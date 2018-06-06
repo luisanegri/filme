@@ -1,14 +1,14 @@
 img {
-padding: 14px;
-max-height: 220px;
-min-height: 220px;
+  padding: 14px;
+  max-height: 220px;
+  min-height: 220px;
 }
 
 .page-section-dark {
-background-color: #535f65;
-border-top: 1px solid #e7eef5;
-border-bottom: 1px solid #84b0c9;
-padding: 10px 0;
+  background-color: #535f65;
+  border-top: 1px solid #e7eef5;
+  border-bottom: 1px solid #84b0c9;
+  padding: 10px 0;
 }
 
 .text-center {
@@ -45,8 +45,8 @@ padding: 10px 0;
 
 .rec {
   font-size: 30px;
-padding-left: 57px;
-margin-top: 40px;
+  padding-left: 57px;
+  margin-top: 40px;
 }
 
 #recommend {

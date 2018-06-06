@@ -1,5 +1,4 @@
-// ------------------ Query search ------------------ //
-//Create an event for when the form is submitted, pass value to variable, pass variable content to function
+//Create an event for when the form is submitted, store value to variable, use variable in the getFilms function
 $(document).ready(() => {
   $('#searchForm').on('submit', (e) => {
     let searchText = $('#searchText').val();
@@ -12,12 +11,10 @@ $(document).ready(() => {
 function getFilms(searchText) {
   axios.get('https://api.themoviedb.org/3/search/movie?api_key=481bce5538131467b4d3508eda2d7e05&language=en&include_image_language=en,null&query=' + searchText)
     .then((response) => {
-
-      //data stored on the films variable
       let films = response.data.results;
       let output = [];
       $.each(films, (index, film) => {
-        output.push( `
+        output.push(`
         <div class="col-md-3">
           <div class="well text-center">
             <img src="https://image.tmdb.org/t/p/w185/${film.poster_path}">
@@ -33,13 +30,15 @@ function getFilms(searchText) {
       console.log(err);
     });
 }
-//pass data to one page to another through session storage
+
+// store data on sessionStorage and pass data to one page to another
 function switchPage(id) {
   sessionStorage.setItem('filmId', id);
   window.location = 'film.html';
   return false;
 }
 
+//use ID stored on sessionStorage to get the chosen film details
 function filmDetails() {
   let filmId = sessionStorage.getItem('filmId');
   axios.get('https://api.themoviedb.org/3/movie/' + filmId + '?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US')
@@ -65,7 +64,6 @@ function filmDetails() {
         <div class="well overview">
           <h3>Overview</h3>
           ${film.overview}
-
         </div>
       </div>
       `;
@@ -76,6 +74,7 @@ function filmDetails() {
     });
 }
 
+// use ID stored on sessionStorage to get recommendations according to the chosen film
 function recommendations() {
   let filmId = sessionStorage.getItem('filmId');
   axios.get('https://api.themoviedb.org/3/movie/' + filmId + '/recommendations?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US&page=1')
@@ -86,7 +85,7 @@ function recommendations() {
         if (index > 5) { //do const
           return false;
         }
-        output.push( `
+        output.push(`
        <div class="col-md-2">
          <div class="well text-center">
            <a onclick="switchPage('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}"></a>
@@ -104,6 +103,7 @@ function recommendations() {
     });
 }
 
+
 function popularFilms() {
   axios.get('https://api.themoviedb.org/3/discover/movie?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
     .then((response) => {
@@ -116,10 +116,10 @@ function popularFilms() {
         output.push(`
           <div class="col-md-2 col-sm-4 col-xs-6">
             <div class="well text-center">
-        <a onclick="switchPage('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}" class="pop-img"></a>
-        <a onclick="switchPage('${film.id}')" href="#"><h5>${film.title}</h5></a>
-      </div>
-    </div>
+              <a onclick="switchPage('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}" class="pop-img"></a>
+              <a onclick="switchPage('${film.id}')" href="#"><h5>${film.title}</h5></a>
+            </div>
+          </div>
     `);
       });
       $('#popular-films').html(output.join(""));
