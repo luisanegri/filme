@@ -1,6 +1,6 @@
 //Create an event for when the form is submitted, store value to variable, use variable in the getFilms function
 $(document).ready(() => {
-  $('#searchForm').on('submit', (e) => {
+  $('#searchForm').on('click', (e) => {
     let searchText = $('#searchText').val();
     getFilms(searchText);
     e.preventDefault();
