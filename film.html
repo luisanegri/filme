@@ -22,14 +22,18 @@
     </div>
   </nav>
   <div class="container">
-    <div id="film" class="well"></div>
+    <div id="film" class="well">
+      <li id="genre"></li>
+
+    </div>
   </div>
+
   <h3 class="rec">Recommendations</h3>
   <div id="recommend" class="row">
 
   </div>
   <footer>
-    
+
   </footer>
 
 
@@ -37,8 +41,8 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="main.js"></script>
   <script>
-    getFilmDetails();
-    getRecommendations();
+    filmDetails();
+    recommendations();
   </script>
 </body>
 
