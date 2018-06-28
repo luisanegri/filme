@@ -1,5 +1,5 @@
 # Single Page Application 
-Demo:  https://luisanegri.github.io/filmapi 
+Demo:  https://luisanegri.github.io/Interactive-Frontend/
 
 ## Overview
 
@@ -23,7 +23,7 @@ Demo:  https://luisanegri.github.io/filmapi
 
 ## To do:
 - Fix responsiveness
-- Stores genres in variable
+
 
 
 
