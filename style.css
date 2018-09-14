@@ -125,5 +125,7 @@ a .btn {
   .title-small {
     font-size: 15px;
   }
-
+  #recommend {
+    padding: 20px;
+  }
 }
