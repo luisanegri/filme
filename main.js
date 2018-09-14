@@ -51,8 +51,8 @@ function filmDetails() {
           <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="thumbnail img-poster">
         </div>
         <div class="col-md-8  desc">
-          <h2>${film.title}</h2>
-          <ul class="list-group">
+          <h2 class="title">${film.title}</h2>
+          <ul class="list-group" id="film-details">
             <li class="list-group-item"><strong>Genre:</strong> ${film.genres[0].name}</li>
             <li class="list-group-item"><strong>Released:</strong> ${film.release_date}</li>
             <li class="list-group-item"><strong>Rated:</strong> ${film.vote_average}</li>
@@ -62,8 +62,8 @@ function filmDetails() {
       </div>
       <div class="row">
         <div class="well overview">
-          <h3>Overview</h3>
-          ${film.overview}
+          <h3 class="title-overview">Overview</h3>
+          <p>${film.overview}</p>
         </div>
       </div>
       `;
@@ -86,10 +86,10 @@ function recommendations() {
           return false;
         }
         output.push(`
-       <div class="col-md-2">
+       <div class="col-xs-12">
          <div class="well text-center">
            <a onclick="switchPage('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}"></a>
-           <a onclick="switchPage('${film.id}')" href="#"><h5>${film.title}</h5></a>
+           <a onclick="switchPage('${film.id}')" href="#"><h5 class="title-small">${film.title}</h5></a>
          </div>
        </div>
        <hr>
