@@ -15,11 +15,11 @@ function getFilms(searchText) {
       let output = [];
       $.each(films, (index, film) => {
         output.push(`
-        <div class="col-md-3">
+        <div class="col-sm-4">
           <div class="well text-center well-results">
             <img src="https://image.tmdb.org/t/p/w185/${film.poster_path}">
             <h5 class="film-title">${film.title}</h5>
-            <a onclick="switchPage('${film.id}')" class="btn btn-primary" href="#">Film Details</a>
+            <a onclick="switchPage('${film.id}')" class="btn btn-primary" id="btn-detail" href="#">Film Details</a>
           </div>
         </div>
       `);
@@ -50,7 +50,7 @@ function filmDetails() {
         <div class="col-md-4">
           <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="thumbnail img-poster">
         </div>
-        <div class="col-md-8  desc">
+        <div class="col-md-6 desc">
           <h2 class="title">${film.title}</h2>
           <ul class="list-group" id="film-details">
             <li class="list-group-item"><strong>Genre:</strong> ${film.genres[0].name}</li>
@@ -82,14 +82,14 @@ function recommendations() {
       let recommend = response.data.results;
       let output = [];
       $.each(recommend, (index, film) => { //use for loop
-        if (index > 5) { //do const
+        if (index > 7) { //do const
           return false;
         }
         output.push(`
        <div class="col-xs-12">
          <div class="well text-center">
            <a onclick="switchPage('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}"></a>
-           <a onclick="switchPage('${film.id}')" href="#"><h5 class="title-small">${film.title}</h5></a>
+           <a onclick="switchPage('${film.id}')" href="#"><h5 class="title-small title-truncate">${film.title}</h5></a>
          </div>
        </div>
        <hr>
@@ -114,10 +114,10 @@ function popularFilms() {
           return false;
         }
         output.push(`
-          <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="col-sm-4 col-lg-2">
             <div class="well text-center">
               <a onclick="switchPage('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}" class="pop-img"></a>
-              <a onclick="switchPage('${film.id}')" href="#"><h5>${film.title}</h5></a>
+              <a onclick="switchPage('${film.id}')" href="#"><h5 class="title-small">${film.title}</h5></a>
             </div>
           </div>
     `);

@@ -12,14 +12,13 @@ img {
 }
 
 .text-center {
-  text-align: center;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .title-pop {
   color: #fafafa;
   margin-left: 10px;
-  font-size: 22px;
+  font-size: 19px;
 }
 
 .navbar {
@@ -32,7 +31,8 @@ img {
 }
 
 .desc {
-  padding-top: 20px;
+
+  padding-left: 90px;
 }
 
 .overview {
@@ -63,16 +63,23 @@ img {
 
 .film-title {
   font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 20px;
+  margin: 0;
+  resize: horizontal;
 }
 
 .well-results {
   background-color: #e9ecef;
   box-shadow: 10px 5px;
-  max-width: 200px;
-  min-width: 200px;
+  max-width: 190px;
+  min-width: 190px;
   margin-bottom: 30px;
-  text-align: center;
-  margin-left: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
 }
 
 .btn-primary {
@@ -84,17 +91,53 @@ a .btn {
   border-radius: 0;
 }
 
+.title-small {
+  font-size: 16px;
 
-
-
-/* Media Query */
-
-@media (min-width: 400px) and (max-width: 574px) {
-  .pop-img {
-    max-height: 150px;
-    min-height: 150px;
-  }
 }
+
+.pop-img {
+  max-height: 200px;
+  min-height: 200px;
+}
+
+#search-box {
+  margin-top: 30px;
+}
+
+#btn-detail {
+  font-size: .9rem;
+}
+
+.title-overview {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.rec {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.title {
+  font-size: 25px;
+  margin: 10px 0;
+  color: #535f65;
+  font-weight: bold;
+}
+
+.title-truncate {
+  width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 20px;
+      margin: 0;
+      resize: horizontal;
+}
+/* Media Query */
 
 @media (max-width: 768px) {
   .img-poster {
@@ -111,15 +154,9 @@ a .btn {
   #film-details {
     margin-bottom: 30px;
   }
-  .title-overview {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
-  }
+
   .rec {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 30px 11px;
+    margin: 30px 11px 0;
     text-align: center;
   }
   .title-small {
@@ -127,5 +164,18 @@ a .btn {
   }
   #recommend {
     padding: 20px;
+  }
+  #search-box {
+    padding: 4rem 2rem;
+  }
+  .text-center {
+    margin-bottom: 23px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .desc {
+    margin-left: 57px;
+
   }
 }
