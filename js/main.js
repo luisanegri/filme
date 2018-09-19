@@ -89,7 +89,7 @@ function recommendations() {
        <div class="col-xs-12">
          <div class="well text-center">
            <a onclick="switchPage('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}"></a>
-           <a onclick="switchPage('${film.id}')" href="#"><h5 class="title-small title-truncate">${film.title}</h5></a>
+           <a onclick="switchPage('${film.id}')" href="#"><h5 class="title-small title - truncate">${film.title}</h5></a>
          </div>
        </div>
        <hr>
