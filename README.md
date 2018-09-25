@@ -21,8 +21,7 @@ Demo:  https://luisanegri.github.io/Interactive-Frontend/
 * Bootstrap
 * Bootswatch
 
-## To do:
-- Fix responsiveness
+
 
 
 
