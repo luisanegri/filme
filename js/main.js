@@ -115,7 +115,7 @@ function popularFilms() {
         }
         output.push(`
           <div class="col-sm-4 col-lg-2">
-            <div class="well text-center">
+            <div class="text-center">
               <a onclick="switchPage('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}" class="pop-img"></a>
               <a onclick="switchPage('${film.id}')" href="#"><h5 class="title-small">${film.title}</h5></a>
             </div>
@@ -124,6 +124,63 @@ function popularFilms() {
       });
       $('#popular-films').html(output.join(""));
       filmDetails();
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
+
+
+function bestVotedAnimation() {
+  axios.get('https://api.themoviedb.org/3/discover/movie?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&with_genres=16&year=2018')
+    .then((response) => {
+      let bestVoted = response.data.results;
+      console.log(bestVoted);
+      let output = [];
+      $.each(bestVoted, (index, film) => {
+        if (index > 0) {
+          return false;
+        }
+        output.push(`
+
+          <div class="info-first">
+            <a onclick="switchPage('${film.id}')" href="#">
+              <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="image-front-page" style="height: 442px; width: 400px;">
+            </a>
+          </div>
+
+    `);
+      });
+      $('#best-voted-animation').html(output.join(""));
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
+
+function comingSoon() {
+  axios.get('https://api.themoviedb.org/3/discover/movie?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&primary_release_year=2019')
+    .then((response) => {
+      let coming = response.data.results;
+      console.log(coming);
+      let output = [];
+      $.each(coming, (index, film) => {
+        if (index > 0) {
+          return false;
+        }
+        output.push(`
+
+          <div class="info-first">
+            <a onclick="switchPage('${film.id}')" href="#">
+              <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="image-front-page" style="height: 442px; width: 400px;">
+            </a>
+          </div>
+
+    `);
+      });
+      $('#coming-soon').html(output.join(""));
     })
     .catch((err) => {
       console.error(err);
