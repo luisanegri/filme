@@ -14,25 +14,23 @@
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet">
 </head>
-
 <body>
-  <nav class="navbar navbar-default" style="background-color: #3943A6; border-radius: 0; border: 0">
+  <nav class="navbar navbar-default" id="nav-custom">
     <div class="navbar-header">
-      <a class="navbar-brand brand-name" href="index.html" style="color: #C2F970; font-family: 'Pattaya', cursive;">filme.</a>
+      <a class="navbar-brand brand-name" id="brand-color" href="index.html">filme.</a>
     </div>
   </nav>
   <div class="container-fluid page-section-dark">
-    <h3 class="title-pop">Popular films on Filme</h3>
+    <h3 class="title-pop">Popular on <span class="brand-name">filme.</span></h3>
     <div class="page-section-dark">
       <div id="popular-films" class="row"></div>
     </div>
   </div>
-
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <div class="jumbotron" id="search-box" style="#4F5E65;">
-          <h3 class="text-center" style="font-family: 'Pattaya'; color: '#EBE7E7';">Search Films</h3>
+        <div class="jumbotron" id="search-box">
+          <h3 class="text-center search-title">Search Films</h3>
           <div class="input-group">
             <input type="text" class="form-control" id="searchText" placeholder="Search films">
             <span class="input-group-btn">
@@ -43,29 +41,17 @@
         <div id="films" class="row"></div>
       </div>
     </div>
-
-      <div class="section" style="width: 800px; margin-top: 30px; margin-bottom: 30px; margin-right: auto;
-    margin-left: auto;
-    display: block;">
-        <div class="col-md-6 col-sm-6">
-          <h4 style="font-family: 'Pattaya';">Best Voted Animation</h4>
-          <div id="best-voted-animation" style=" width: 400px; height: 422px;">
-
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-6">
-          <h4 style="font-family: 'Pattaya';">Coming soon...</h4>
-          <div id="coming-soon" style=" width: 400px; height: 422px;">
-
-          </div>
-        </div>
+    <div class="main-section">
+      <div class="col-md-6 col-sm-6">
+        <h4 class="title-section">Best Voted Animation</h4>
+        <div id="best-voted-animation" class="half-section"></div>
       </div>
-
-
-
-
-  </div>
-  <!--end container-->
+      <div class="col-md-6 col-sm-6">
+        <h4 class="title-section second-section">Coming soon...</h4>
+        <div id="coming-soon" class="half-section"></div>
+      </div>
+    </div>
+  </div><!--end container-->
 
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

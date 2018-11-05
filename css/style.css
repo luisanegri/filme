@@ -2,24 +2,34 @@
   background-color: #000;
 }
 
+#nav-custom {
+  background-color: #3943A6;
+  border-radius: 0;
+  border: 0;
+  margin-bottom: 0;
+}
+
 /* Index.html */
 
 .brand-name {
-  font-size: 20px;
-  font-family: Poiret One;
-  letter-spacing: 4px;
+  font-size: 22px;
+  font-family: 'Pattaya';
+  letter-spacing: 1px;
   font-weight: bold;
+  color: #C2F970;
+}
+
+#brand-color {
+  color: #C2F970;
 }
 
 .page-section-dark {
-  background-color: #535f65;
-  border-top: 1px solid #e7eef5;
-  border-bottom: 1px solid #84b0c9;
-  padding: 10px 0;
+  background-color: #4F5E65;
+  padding: 10px 20px;
 }
 
 .title-pop {
-  color: #fafafa;
+  color: #EBE7E7;
   margin-left: 10px;
   font-size: 19px;
 }
@@ -32,31 +42,74 @@
   font-size: 20px;
 }
 
+.search-title {
+  font-family: 'Pattaya';
+  color: #2F3788;
+}
+
 #searchForm {
   background-color: #535f65;
   color: #fafafa;
   margin-left: 5px;
 }
 
-img {
-  padding: 14px;
-  max-height: 220px;
-  min-height: 220px;
+.well-results {
+  width: 216px;
+  height: 310px;
+  border-radius: 0;
+  background: #70858F;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.well-results {
-  background-color: #e9ecef;
-  box-shadow: 10px 5px;
-  max-width: 190px;
-  min-width: 190px;
+.image-well {
+  min-width: 110px;
+  max-width: 110px;
+  min-height: 185px;
+  max-height: 185px;
+}
+
+#btn-detail {
+  font-size: 13px;
+  background-color: #C2F970;
+  color: black;
+  font-weight: bold;
+  border-color: transparent;
+  margin-top: -9px;
+}
+
+.title-small {
+  font-size: 16px;
+  color: #fafafa;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.main-section {
+  width: 800px;
+  margin-top: 30px;
   margin-bottom: 30px;
   margin-right: auto;
   margin-left: auto;
   display: block;
 }
 
-#btn-detail {
-  font-size: .9rem;
+.title-section {
+  font-family: 'Pattaya';
+  color: #2F3788;
+}
+
+.half-section {
+  width: 400px;
+  height: 422px;
+}
+
+.image-front-page {
+  height: 442px;
+  width: 400px;
 }
 
 /* Film.html */
@@ -86,6 +139,7 @@ img {
   padding: 20px;
   margin: 0;
   resize: horizontal;
+  color: #fafafa;
 }
 
 .btn-primary {
@@ -95,10 +149,6 @@ img {
 
 a .btn {
   border-radius: 0;
-}
-
-.title-small {
-  font-size: 16px;
 }
 
 .pop-img {
@@ -137,6 +187,12 @@ a .btn {
 
 /* Media Query */
 
+@media (max-width: 767px) {
+    .second-section {
+      margin-top: 43px;
+    }
+  }
+
 @media (max-width: 768px) {
   .img-poster {
     margin-right: auto;
@@ -168,10 +224,21 @@ a .btn {
   .text-center {
     margin-bottom: 23px;
   }
+  .main-section {
+    width: 600px;
+  }
+  .half-section {
+    width: 300px;
+  }
+  .image-front-page {
+    width: 300px;
+  }
+
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
   .desc {
     margin-left: 57px;
   }
+
 }
