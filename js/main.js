@@ -17,9 +17,9 @@ function getFilms(searchText) {
         output.push(`
         <div class="col-sm-4">
           <div class="well text-center well-results">
-            <img src="https://image.tmdb.org/t/p/w185/${film.poster_path}">
+            <img src="https://image.tmdb.org/t/p/w185/${film.poster_path}" class="image-well">
             <h5 class="film-title">${film.title}</h5>
-            <a onclick="switchPage('${film.id}')" class="btn btn-primary" id="btn-detail" href="#">Film Details</a>
+            <a onclick="switchPage('${film.id}')" class="btn btn-primary" id="btn-detail" href="#">Details</a>
           </div>
         </div>
       `);
@@ -146,7 +146,7 @@ function bestVotedAnimation() {
 
           <div class="info-first">
             <a onclick="switchPage('${film.id}')" href="#">
-              <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="image-front-page" style="height: 442px; width: 400px;">
+              <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="image-front-page">
             </a>
           </div>
 
@@ -174,7 +174,7 @@ function comingSoon() {
 
           <div class="info-first">
             <a onclick="switchPage('${film.id}')" href="#">
-              <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="image-front-page" style="height: 442px; width: 400px;">
+              <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="image-front-page">
             </a>
           </div>
 
