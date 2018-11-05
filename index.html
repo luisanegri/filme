@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-  <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link type="text/css" rel="stylesheet" href="css/style.css">
-
-
+  <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet">
 </head>
+
 <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default" style="background-color: #3943A6; border-radius: 0; border: 0">
     <div class="navbar-header">
-      <a class="navbar-brand brand-name" href="index.html">FILME</a>
+      <a class="navbar-brand brand-name" href="index.html" style="color: #C2F970; font-family: 'Pattaya', cursive;">filme.</a>
     </div>
   </nav>
   <div class="container-fluid page-section-dark">
@@ -23,25 +27,56 @@
       <div id="popular-films" class="row"></div>
     </div>
   </div>
-  <div class="col-md-12">
-    <div class="jumbotron" id="search-box">
-      <h3 class="text-center">Search Films</h3>
-      <div class="input-group">
-        <input type="text" class="form-control" id="searchText" placeholder="Search films">
-        <span class="input-group-btn">
-          <button type="button" class="btn" id="searchForm">Search</button>
-        </span>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="jumbotron" id="search-box" style="#4F5E65;">
+          <h3 class="text-center" style="font-family: 'Pattaya'; color: '#EBE7E7';">Search Films</h3>
+          <div class="input-group">
+            <input type="text" class="form-control" id="searchText" placeholder="Search films">
+            <span class="input-group-btn">
+              <button type="button" class="btn" id="searchForm">Search</button>
+            </span>
+          </div>
+        </div>
+        <div id="films" class="row"></div>
       </div>
     </div>
+
+      <div class="section" style="width: 800px; margin-top: 30px; margin-bottom: 30px; margin-right: auto;
+    margin-left: auto;
+    display: block;">
+        <div class="col-md-6 col-sm-6">
+          <h4 style="font-family: 'Pattaya';">Best Voted Animation</h4>
+          <div id="best-voted-animation" style=" width: 400px; height: 422px;">
+
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <h4 style="font-family: 'Pattaya';">Coming soon...</h4>
+          <div id="coming-soon" style=" width: 400px; height: 422px;">
+
+          </div>
+        </div>
+      </div>
+
+
+
+
   </div>
-  <div id="films" class="row"></div>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!--end container-->
+
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
     filmDetails();
     popularFilms();
-
+    bestVotedAnimation();
+    comingSoon();
   </script>
 </body>
+
 </html>
