@@ -8,9 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
   <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
   <link type="text/css" rel="stylesheet" href="css/style.css">
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 
 </head>
 <body>
@@ -29,7 +27,7 @@
     <div class="jumbotron" id="search-box">
       <h3 class="text-center">Search Films</h3>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search films">
+        <input type="text" class="form-control" id="searchText" placeholder="Search films">
         <span class="input-group-btn">
           <button type="button" class="btn" id="searchForm">Search</button>
         </span>
@@ -37,10 +35,13 @@
     </div>
   </div>
   <div id="films" class="row"></div>
-  <div id="best" class="row"></div>
-
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
+    filmDetails();
     popularFilms();
+
   </script>
 </body>
 </html>
