@@ -1,4 +1,3 @@
-//Create an event for when the form is submitted, store value to variable, use variable in the getFilms function
 $(document).ready(() => {
   $('#searchForm').on('click', (e) => {
     let searchText = $('#searchText').val();
@@ -31,14 +30,14 @@ function getFilms(searchText) {
     });
 }
 
-// store data on sessionStorage and pass data to one page to another
+
 function switchPage(id) {
   sessionStorage.setItem('filmId', id);
   window.location = 'film.html';
   return false;
 }
 
-//use ID stored on sessionStorage to get the chosen film details
+
 function filmDetails() {
   let filmId = sessionStorage.getItem('filmId');
   axios.get('https://api.themoviedb.org/3/movie/' + filmId + '?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US')
@@ -46,11 +45,11 @@ function filmDetails() {
       //store data
       let film = response.data;
       let output = `
-      <div class="row">
-        <div class="col-md-4">
+      <div class="row" id="info-first">
+        <div class="col-md-4 col-sm-2">
           <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="thumbnail img-poster">
         </div>
-        <div class="col-md-6 desc">
+        <div class="col-md-6 col-sm-6 desc">
           <h2 class="title">${film.title}</h2>
           <ul class="list-group" id="film-details">
             <li class="list-group-item"><strong>Genre:</strong> ${film.genres[0].name}</li>
@@ -63,7 +62,7 @@ function filmDetails() {
       <div class="row">
         <div class="well overview">
           <h3 class="title-overview">Overview</h3>
-          <p>${film.overview}</p>
+          <p class="overview-description">${film.overview}</p>
         </div>
       </div>
       `;
@@ -74,7 +73,7 @@ function filmDetails() {
     });
 }
 
-// use ID stored on sessionStorage to get recommendations according to the chosen film
+
 function recommendations() {
   let filmId = sessionStorage.getItem('filmId');
   axios.get('https://api.themoviedb.org/3/movie/' + filmId + '/recommendations?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US&page=1')
@@ -82,19 +81,18 @@ function recommendations() {
       let recommend = response.data.results;
       let output = [];
       $.each(recommend, (index, film) => { //use for loop
-        if (index > 7) { //do const
+        if (index > 5) { //do const
           return false;
         }
         output.push(`
-       <div class="col-xs-12">
-         <div class="well text-center">
-           <a onclick="switchPage('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}"></a>
-           <a onclick="switchPage('${film.id}')" href="#"><h5 class="title-small title - truncate">${film.title}</h5></a>
-         </div>
-       </div>
-       <hr>
-       `);
-      });
+          <div class="col-sm-4 col-lg-2">
+            <div class="text-center">
+              <a onclick="switchPage('${film.id}')" href="#"><img src="https://image.tmdb.org/t/p/w185/${film.poster_path}" class="pop-img"></a>
+              <a onclick="switchPage('${film.id}')" href="#"><h5 class="title-small">${film.title}</h5></a>
+            </div>
+          </div>
+          `);
+        });
       $('#recommend').html(output.join(""));
       filmDetails();
     })
@@ -120,8 +118,8 @@ function popularFilms() {
               <a onclick="switchPage('${film.id}')" href="#"><h5 class="title-small">${film.title}</h5></a>
             </div>
           </div>
-    `);
-      });
+          `);
+        });
       $('#popular-films').html(output.join(""));
       filmDetails();
     })
@@ -129,7 +127,6 @@ function popularFilms() {
       console.error(err);
     });
 }
-
 
 
 function bestVotedAnimation() {
@@ -143,15 +140,13 @@ function bestVotedAnimation() {
           return false;
         }
         output.push(`
-
           <div class="info-first">
             <a onclick="switchPage('${film.id}')" href="#">
               <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="image-front-page">
             </a>
           </div>
-
-    `);
-      });
+          `);
+        });
       $('#best-voted-animation').html(output.join(""));
     })
     .catch((err) => {
@@ -171,15 +166,13 @@ function comingSoon() {
           return false;
         }
         output.push(`
-
           <div class="info-first">
             <a onclick="switchPage('${film.id}')" href="#">
               <img src="https://image.tmdb.org/t/p/w500/${film.poster_path}" class="image-front-page">
             </a>
           </div>
-
-    `);
-      });
+          `);
+        });
       $('#coming-soon').html(output.join(""));
     })
     .catch((err) => {

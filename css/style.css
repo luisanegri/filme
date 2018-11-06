@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Pattaya');
 .navbar {
   background-color: #000;
 }
@@ -119,12 +120,19 @@ a:hover {
   min-height: 400px;
 }
 
-.desc {
-  padding-left: 90px;
+
+
+#info-first {
+  background: lightgrey;
+  border-radius: 0;
+  padding-top: 20px;
+  margin-top: -19px;
 }
 
 .overview {
   padding-left: 26px;
+  border-radius: 0;
+  background: #70858F;
 }
 
 #recommend {
@@ -160,6 +168,11 @@ a .btn {
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
+  color: #EBE7E7;
+}
+
+.overview-description {
+  color: #fff;
 }
 
 .rec {
@@ -188,16 +201,17 @@ a .btn {
 /* Media Query */
 
 @media (max-width: 767px) {
-    .second-section {
-      margin-top: 43px;
-    }
+  .second-section {
+    margin-top: 43px;
   }
+}
 
 @media (max-width: 768px) {
   .img-poster {
     margin-right: auto;
     margin-left: auto;
     display: block;
+    width: 228px;
   }
   .title {
     text-align: center;
@@ -233,12 +247,12 @@ a .btn {
   .image-front-page {
     width: 300px;
   }
-
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
   .desc {
-    margin-left: 57px;
-  }
+  /*  margin-left:  174px; */
+  padding-left: 185px;
 
+  }
 }
