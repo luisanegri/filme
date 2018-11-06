@@ -26,9 +26,9 @@ From the details page, the user can see a list of recommendations according to t
 
 * [Axios](https://github.com/axios/axios)
     * Promise based HTTP request
-* JavaScript
-* jQuery
-* Bootstrap
+* [JavaScript](https://www.javascript.com/)
+* [jQuery](https://jquery.com/)
+* [Bootstrap](https://getbootstrap.com/docs/3.3/)
 * [The MovieDB API](https://www.themoviedb.org/documentation/api)
     * RESTful web service
 
