@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Pattaya');
+
+html, body {
+  height: 100%;
+}
+
 .navbar {
   background-color: #000;
 }
@@ -10,10 +15,18 @@
   margin-bottom: 0;
 }
 
+.main-container {
+  min-height: 100%;
+}
+
+.main {
+  padding-bottom: 70px;
+}
 #footer {
   background-color: #3943A6;
   height: 70px;
-  margin-top: 70px;
+  margin-top: -70px;
+  position: relative;
 }
 
 #footer-icon {
@@ -276,6 +289,6 @@ a .btn {
 @media (min-width: 768px) and (max-width: 992px) {
   .desc {
     /*  margin-left:  174px; */
-    padding-left: 185px;
+    margin-left: 185px;
   }
 }
