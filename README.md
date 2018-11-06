@@ -35,7 +35,7 @@ From the details page, the user can see a list of recommendations according to t
 ## Testing
 
 * The website was tested in different devices and adapted accordingly using media queries and bootstrap.
-* All the data needed is being retrieved as it should.
+* All the data needed is being retrieved as it should: when using the search box, when clicking on the link to see the details.
 
 ## Deployment
 
