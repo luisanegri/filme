@@ -133,7 +133,6 @@ function bestVotedAnimation() {
   axios.get('https://api.themoviedb.org/3/discover/movie?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&with_genres=16&year=2018')
     .then((response) => {
       let bestVoted = response.data.results;
-      console.log(bestVoted);
       let output = [];
       $.each(bestVoted, (index, film) => {
         if (index > 0) {
@@ -159,7 +158,6 @@ function comingSoon() {
   axios.get('https://api.themoviedb.org/3/discover/movie?api_key=481bce5538131467b4d3508eda2d7e05&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&primary_release_year=2019')
     .then((response) => {
       let coming = response.data.results;
-      console.log(coming);
       let output = [];
       $.each(coming, (index, film) => {
         if (index > 0) {
