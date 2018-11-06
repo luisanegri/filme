@@ -10,6 +10,32 @@
   margin-bottom: 0;
 }
 
+#footer {
+  background-color: #3943A6;
+  height: 70px;
+  margin-top: 70px;
+}
+
+#footer-icon {
+  color: white;
+  font-size: 20px;
+}
+
+#footer-icon:hover {
+  color: #C2F970;
+}
+
+.icon-row {
+  text-align: center;
+}
+
+.footer-content {
+  text-align: center;
+  font-family: sans-serif;
+  color: #fafafa;
+  padding-top: 10px;
+}
+
 /* Index.html */
 
 .brand-name {
@@ -119,8 +145,6 @@ a:hover {
   max-height: 400px;
   min-height: 400px;
 }
-
-
 
 #info-first {
   background: lightgrey;
@@ -251,8 +275,7 @@ a .btn {
 
 @media (min-width: 768px) and (max-width: 992px) {
   .desc {
-  /*  margin-left:  174px; */
-  padding-left: 185px;
-
+    /*  margin-left:  174px; */
+    padding-left: 185px;
   }
 }
