@@ -13,6 +13,13 @@ It is also displayed the "Best Rated Animation" and "Coming soon" posters.
 Each film has its own details that it is displayed on another page, it shows the poster, title, genre, rating, and its website.
 From the details page, the user can see a list of recommendations according to the specific film.
 
+## Wireframe
+
+I used [Figma](https://www.figma.com/) for the website design.
+
+![filme - spa 5](https://user-images.githubusercontent.com/36419121/48081510-1ec9bd00-e1e8-11e8-86eb-ca8154a7e4db.png)
+
+
 ## Features
 
 * Search for films
