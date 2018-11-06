@@ -91,6 +91,7 @@ html, body {
   background-color: #535f65;
   color: #fafafa;
   margin-left: 5px;
+  border-radius: 0;
 }
 
 .well-results {
