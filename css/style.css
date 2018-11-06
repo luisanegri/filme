@@ -120,6 +120,11 @@ html, body {
   margin-top: -9px;
 }
 
+#btn-detail:hover {
+  background-color: #fafafa;
+  transition: 0.3s;
+}
+
 .title-small {
   font-size: 16px;
   color: #fafafa;
