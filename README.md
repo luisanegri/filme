@@ -15,7 +15,7 @@ From the details page, the user can see a list of recommendations according to t
 
 ## Wireframe
 
-I used [Figma](https://www.figma.com/) for the website design.
+I used [Figma](https://www.figma.com/) for creating the website design.
 
 ![filme - spa 5](https://user-images.githubusercontent.com/36419121/48081510-1ec9bd00-e1e8-11e8-86eb-ca8154a7e4db.png)
 
